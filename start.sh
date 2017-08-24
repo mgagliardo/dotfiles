@@ -13,6 +13,9 @@ brew bundle
 # Override .bashrc
 cp .bashrc $HOME/.bashrc
 
+# Golang GOPATH
+mkdir $HOME/.go
+
 # AWS CLI
 sudo easy_install pip
 sudo pip install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore virtualenv PyYAML

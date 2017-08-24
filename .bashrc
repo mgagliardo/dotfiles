@@ -1,4 +1,4 @@
-# Just LOCALE
+# LOCALE
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -7,19 +7,18 @@ alias ll='ls -laF'
 alias whatsmyip='curl -s http://whatismyip.akamai.com/'
 
 # Gopath
-GOROOT="/usr/local/go"
 GOPATH="$HOME/.go"
 
 # Groovy
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
-# Mypath
-PATH="$PATH:/usr/local/bin:/usr/local/go/bin:/opt/hashicorp:/opt/groovy/bin:/opt/grails/grails-2.4.4/bin/:/opt/node/bin:$GOROOT/bin:$HOME/Scripts"
+# $PATH
+PATH="$PATH:/usr/local/opt/go/libexec/bin:/usr/local/bin"
 
 # Cool stuff for bash
 # Enable the git bash completion commands
-source /usr/local/etc/bash_completion.d/git-prompt.sh
-source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/opt/bash-git-prompt/share/gitprompt.sh
+source /usr/local/etc/bash_completion
 
 # Colours!
 BLACK=$(tput setaf 0)
