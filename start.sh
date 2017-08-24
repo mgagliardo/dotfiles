@@ -13,6 +13,10 @@ brew bundle
 # Override .bashrc
 cp .bashrc $HOME/.bashrc
 
+# AWS CLI
+sudo easy_install pip
+sudo pip install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore virtualenv PyYAML
+
 # Vagrant boxes download
 vagrant box add --provider virtualbox centos/7
 vagrant box add --provider virtualbox ubuntu/trusty64
