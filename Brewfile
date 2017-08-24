@@ -21,6 +21,8 @@ cask "virtualbox"
 cask "vagrant"
 
 # Random stuff
+tap "cask/hipchat"
+brew "pidgin"
 cask "dropbox"
 cask "vlc"
 cask "skype"
@@ -28,4 +30,3 @@ cask "dosbox"
 cask "deluge"
 cask "evernote"
 cask "keepassx"
-tap "cask/hipchat"
