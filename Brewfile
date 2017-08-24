@@ -14,7 +14,7 @@ cask "iterm2"
 cask "google-chrome"
 cask "atom"
 cask "java" unless system "/usr/libexec/java_home --failfast"
-cask "firefox", args: { appdir: "~/apps/Applications" }
+cask "firefox"
 
 # VMs
 cask "virtualbox"
