@@ -1,5 +1,8 @@
 cask_args appdir: "/Applications"
 
+# Cask upgrade app
+tap "buo/cask-upgrade"
+
 # System
 brew "bash-completion"
 brew "bash-git-prompt"
