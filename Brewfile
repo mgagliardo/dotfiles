@@ -25,7 +25,7 @@ cask "vagrant"
 
 # Random stuff
 tap "cask/hipchat"
-brew "pidgin"
+cask "adium"
 cask "dropbox"
 cask "vlc"
 cask "skype"
