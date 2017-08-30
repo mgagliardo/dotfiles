@@ -13,6 +13,7 @@ brew "nmap"
 brew "go"
 brew "groovy"
 brew "node"
+brew "jq"
 
 # Work stuff
 cask "iterm2"
