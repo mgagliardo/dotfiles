@@ -6,6 +6,8 @@ tap "buo/cask-upgrade"
 # System
 brew "bash-completion"
 brew "bash-git-prompt"
+brew "unrar"
+brew "unzip"
 brew "wget"
 brew "nmap"
 brew "go"
