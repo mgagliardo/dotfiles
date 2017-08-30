@@ -21,6 +21,7 @@ cask "firefox"
 
 # VMs
 cask "virtualbox"
+cask "docker"
 cask "vagrant"
 
 # Random stuff
