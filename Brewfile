@@ -14,6 +14,7 @@ brew "go"
 brew "groovy"
 brew "node"
 brew "jq"
+brew "terraform-docs"
 
 # Work stuff
 cask "iterm2"
