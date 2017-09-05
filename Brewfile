@@ -2,6 +2,7 @@ cask_args appdir: "/Applications"
 
 # Cask upgrade app
 tap "buo/cask-upgrade"
+tap "caskroom/versions"
 
 # System
 brew "git"
