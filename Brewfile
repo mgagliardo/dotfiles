@@ -14,7 +14,6 @@ brew "go"
 brew "groovy"
 brew "node"
 brew "jq"
-brew "terraform-docs"
 
 # Work stuff
 cask "iterm2"
@@ -23,9 +22,9 @@ cask "atom"
 cask "java" unless system "/usr/libexec/java_home --failfast"
 cask "firefox"
 
-# VMs
-cask "virtualbox"
+# Docker/VMs
 cask "docker"
+cask "virtualbox"
 cask "vagrant"
 
 # Random stuff
