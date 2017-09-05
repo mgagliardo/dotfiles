@@ -4,6 +4,7 @@ cask_args appdir: "/Applications"
 tap "buo/cask-upgrade"
 
 # System
+brew "git"
 brew "bash-completion"
 brew "bash-git-prompt"
 brew "unrar"
