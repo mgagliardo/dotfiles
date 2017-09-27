@@ -22,7 +22,7 @@ brew "jq"
 cask "iterm2"
 cask "google-chrome"
 cask "atom"
-cask "java" unless system "/usr/libexec/java_home --failfast"
+cask "java8" unless system "/usr/libexec/java_home --failfast"
 cask "firefox"
 
 # Docker/VMs
