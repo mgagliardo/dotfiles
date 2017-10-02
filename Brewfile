@@ -17,6 +17,9 @@ brew "go"
 brew "groovy"
 brew "node"
 brew "jq"
+brew "iproute2mac"
+brew "terraform"
+brew "packer"
 
 # Work stuff
 cask "iterm2"
