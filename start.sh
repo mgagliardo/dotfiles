@@ -15,6 +15,7 @@ brew bundle
 
 # Override .bashrc
 cp .bashrc $HOME/.bashrc
+cp .bashrc $HOME/.bash_profile
 
 # Golang GOPATH
 mkdir $HOME/.go
@@ -26,9 +27,13 @@ for git_repo in git_repos; do
   git clone https://github.com/mgagliardo/$git_repo.git $HOME/Documents/repos/github/$git_repo
 done
 
-# pip
+# pip (Python 2.7)
 sudo easy_install pip
-sudo pip install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore virtualenv PyYAML setuptools
+sudo -H pip install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore virtualenv PyYAML setuptools
+
+# pip3 (Python 3)
+sudo -H pip3 install --upgrade --no-cache-dir --ignore-installed virtualenv virtualenvwrapper PyYAML setuptools
+mkdir $HOME/.virtualenvs
 
 # Get latest Docker images
 docker_images=('alpine:3.6' 'ubuntu:14.04' 'ubuntu:16.04')

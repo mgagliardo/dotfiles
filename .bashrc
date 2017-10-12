@@ -4,7 +4,9 @@ export LC_ALL=en_US.UTF-8
 
 # Aliases
 alias ll='ls -laF'
+alias upgrade_all='brew update && brew upgrade && brew cu -f -y -a'
 alias whatsmyip='curl -s http://whatismyip.akamai.com/'
+alias python=/usr/local/bin/python2.7
 
 # Gopath
 GOPATH="$HOME/.go"
@@ -13,7 +15,12 @@ GOPATH="$HOME/.go"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # $PATH
-PATH="$PATH:/usr/local/opt/go/libexec/bin:/usr/local/bin"
+PATH="$PATH:/usr/local/opt/go/libexec/bin:/usr/local/bin:$HOME/.minimesos/bin"
+
+# Python 3
+VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
+source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
 
 # Cool stuff for bash
 # Enable the git bash completion commands
