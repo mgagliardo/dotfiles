@@ -35,8 +35,8 @@ sudo -H pip install --upgrade --no-cache-dir --ignore-installed awscli pip boto3
 sudo -H pip3 install --upgrade --no-cache-dir --ignore-installed virtualenv virtualenvwrapper PyYAML setuptools
 mkdir $HOME/.virtualenvs
 
-# Get latest Docker images
-docker_images=('alpine:3.6' 'ubuntu:14.04' 'ubuntu:16.04')
+# Get Docker images
+docker_images=('alpine:3.6' 'ubuntu:14.04' 'ubuntu:16.04' 'nginx:stable-alpine' 'amazonlinux:latest' 'centos:7' 'jenkins')
 for docker_image in $docker_images; do
   docker pull $docker_image;
 done
