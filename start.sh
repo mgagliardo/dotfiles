@@ -36,7 +36,7 @@ sudo -H pip3 install --upgrade --no-cache-dir --ignore-installed virtualenv virt
 mkdir $HOME/.virtualenvs
 
 # Get Docker images
-docker_images=('alpine:3.6' 'ubuntu:14.04' 'ubuntu:16.04' 'nginx:stable-alpine' 'amazonlinux:latest' 'centos:7' 'jenkins/jenkins:lts' 'jekyll/jekyll')
+docker_images=('alpine:3.6' 'ubuntu:14.04' 'ubuntu:16.04' 'nginx:stable-alpine' 'amazonlinux:latest' 'centos:7' 'jenkins/jenkins:lts' 'jekyll/jekyll:lastest')
 for docker_image in $docker_images; do
   docker pull $docker_image;
 done
