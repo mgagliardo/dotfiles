@@ -9,13 +9,14 @@ alias whatsmyip='curl -s http://whatismyip.akamai.com/'
 alias python=/usr/local/bin/python2.7
 
 # Gopath
-GOPATH="$HOME/.go"
+export GOPATH="$HOME/.go/pkg"
+export GOROOT="$HOME/.go/
 
 # Groovy
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # $PATH
-PATH="$PATH:/usr/local/opt/go/libexec/bin:/usr/local/bin:$HOME/.minimesos/bin"
+PATH="$PATH:/usr/local/opt/go/libexec/bin:/usr/local/bin:$GOROOT/bin:$GOPATH"
 
 # Python 3
 VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'

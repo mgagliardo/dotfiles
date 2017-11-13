@@ -14,11 +14,10 @@ brew tap homebrew/completions
 brew bundle
 
 # Override .bashrc
-cp .bashrc $HOME/.bashrc
 cp .bashrc $HOME/.bash_profile
 
 # Golang GOPATH
-mkdir $HOME/.go
+mkdir -p $HOME/.go/{src,pkg,bin}
 
 # My git repos
 git_repos = [ 'vagrant-stuff', 'dotfiles' ]
@@ -29,10 +28,10 @@ done
 
 # pip (Python 2.7)
 sudo easy_install pip
-sudo -H pip install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore virtualenv PyYAML setuptools
+sudo -H pip install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore PyYAML setuptools
 
 # pip3 (Python 3)
-sudo -H pip3 install --upgrade --no-cache-dir --ignore-installed virtualenv virtualenvwrapper PyYAML setuptools
+sudo -H pip3 install --upgrade --no-cache-dir --ignore-installed awscli pip3 boto3 botocore virtualenv virtualenvwrapper PyYAML setuptools
 mkdir $HOME/.virtualenvs
 
 # Get Docker images
