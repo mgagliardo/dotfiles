@@ -10,7 +10,7 @@ alias python=/usr/local/bin/python2.7
 
 # Gopath
 export GOPATH="$HOME/.go/pkg"
-export GOROOT="$HOME/.go/
+export GOROOT="$HOME/.go/"
 
 # Groovy
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
