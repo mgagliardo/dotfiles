@@ -32,6 +32,7 @@ cask "google-chrome"
 cask "atom"
 cask "java8" unless system "/usr/libexec/java_home --failfast"
 cask "firefox"
+cask "minikube"
 
 # Docker/VMs
 cask "docker"
