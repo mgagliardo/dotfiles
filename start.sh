@@ -31,7 +31,7 @@ sudo easy_install pip
 sudo -H pip install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore PyYAML setuptools
 
 # pip3 (Python 3)
-sudo -H pip3 install --upgrade --no-cache-dir --ignore-installed awscli pip3 boto3 botocore virtualenv virtualenvwrapper PyYAML setuptools
+sudo -H pip3 install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore virtualenv virtualenvwrapper PyYAML setuptools
 mkdir $HOME/.virtualenvs
 
 # Get Docker images
