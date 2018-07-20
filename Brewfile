@@ -6,6 +6,7 @@ tap "caskroom/versions"
 
 # System
 brew "git"
+brew "hub"
 brew "bash-completion"
 brew "bash-git-prompt"
 brew "unrar"
