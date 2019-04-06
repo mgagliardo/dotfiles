@@ -26,16 +26,12 @@ for git_repo in git_repos; do
   git clone https://github.com/mgagliardo/$git_repo.git $HOME/Documents/repos/github/$git_repo
 done
 
-# pip (Python 2.7)
-sudo easy_install pip
-sudo -H pip install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore PyYAML setuptools
-
 # pip3 (Python 3)
 sudo -H pip3 install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore virtualenv virtualenvwrapper PyYAML setuptools
 mkdir $HOME/.virtualenvs
 
 # Get Docker images
-docker_images=('alpine:3.6' 'ubuntu:14.04' 'ubuntu:16.04' 'nginx:stable-alpine' 'amazonlinux:latest' 'centos:7' 'jenkins/jenkins:lts' 'jekyll/jekyll:lastest')
+docker_images=('alpine:3.9' 'ubuntu:16.04' 'nginx:stable-alpine' 'amazonlinux:latest' 'centos:7')
 for docker_image in $docker_images; do
   docker pull $docker_image;
 done
@@ -46,7 +42,7 @@ for vagrant_plugin in $vagrant_plugins; do
   vagrant plugin install $vagrant_plugin;
 done
 
-vagrant_images=('ubuntu/trusty64' 'ubuntu/xenial64' 'centos/7')
+vagrant_images=('ubuntu/xenial64' 'centos/7')
 for vagrant_image in $vagrant_images; do
   vagrant box add --provider virtualbox $vagrant_image
 done
