@@ -6,3 +6,5 @@
 **/.apm
 **/packages/
 **/atom-shell/
+profile.json
+com.googlecode.iterm2.plist
