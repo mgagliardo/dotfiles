@@ -1,0 +1,8 @@
+**/blob-store
+**/compile-cache
+**/dev
+**/storage
+**/.npm
+**/.apm
+**/packages/
+**/atom-shell/

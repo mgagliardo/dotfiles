@@ -1,0 +1,11 @@
+packages: [
+  "atom-ide-ui"
+  "docker"
+  "file-icons"
+  "go-plus"
+  "go-signature-statusbar"
+  "ide-go"
+  "language-terraform"
+  "package-sync"
+  "terraform-fmt"
+]
