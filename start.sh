@@ -19,13 +19,6 @@ cp .bashrc $HOME/.bash_profile
 # Golang GOPATH
 mkdir -p $HOME/.go/{src,pkg,bin}
 
-# My git repos
-git_repos = [ 'vagrant-stuff', 'dotfiles' ]
-mkdir -p $HOME/Documents/repos/github/
-for git_repo in git_repos; do
-  git clone https://github.com/mgagliardo/$git_repo.git $HOME/Documents/repos/github/$git_repo
-done
-
 # pip3 (Python 3)
 sudo -H pip3 install --upgrade --no-cache-dir --ignore-installed awscli pip boto3 botocore virtualenv virtualenvwrapper PyYAML setuptools
 mkdir $HOME/.virtualenvs
