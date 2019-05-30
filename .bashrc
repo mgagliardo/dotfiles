@@ -4,7 +4,7 @@ export LC_ALL=en_US.UTF-8
 
 # Aliases
 alias ll='ls -laF'
-alias upgrade_all='brew update && brew upgrade && brew cu -f -y -a'
+alias upgrade_all='brew update && brew upgrade && brew cu --yes --all --cleanup'
 alias whatsmyip='curl -s http://whatismyip.akamai.com/'
 alias python=/usr/local/bin/python2.7
 
@@ -21,6 +21,16 @@ PATH="$PATH:/usr/local/opt/go/libexec/bin:/usr/local/bin:$GOPATH/bin:$GOPATH/pkg
 VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
 source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/.virtualenvs
+
+# GPG
+eval $(gpg-agent --daemon)
+export GPG_TTY=$(tty)
+export KEYID=0x9547959C227B2326
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+    . "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
 
 # Cool stuff for bash
 # Enable the git bash completion commands
