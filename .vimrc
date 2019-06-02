@@ -1,3 +1,3 @@
 set number
-set expandtab ts=4 sw=4
+set expandtab ts=2 sw=4
 colorscheme desert

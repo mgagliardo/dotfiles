@@ -15,7 +15,7 @@ export GOPATH="$HOME/.go"
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # $PATH
-PATH="$PATH:/usr/local/opt/go/libexec/bin:/usr/local/bin:$GOPATH/bin:$GOPATH/pkg"
+PATH="/usr/local/bin:$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin:$GOPATH/pkg"
 
 # Python 3
 VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'

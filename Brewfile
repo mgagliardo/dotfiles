@@ -20,6 +20,11 @@ brew "scala"
 brew "go"
 brew "groovy"
 brew "jq"
+brew "gnu-tar"
+brew "gnu-sed"
+brew "gnu-time"
+brew "gnu-which"
+brew "iproute2mac"
 
 # Work stuff
 cask "iterm2"
