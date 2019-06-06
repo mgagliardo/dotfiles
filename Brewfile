@@ -25,6 +25,7 @@ brew "gnu-sed"
 brew "gnu-time"
 brew "gnu-which"
 brew "iproute2mac"
+brew "openvpn"
 
 # Work stuff
 cask "iterm2"
