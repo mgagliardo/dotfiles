@@ -26,6 +26,8 @@ brew "gnu-time"
 brew "gnu-which"
 brew "iproute2mac"
 brew "openvpn"
+brew "awscli"
+brew "amazon-ecs-cli"
 
 # Work stuff
 cask "iterm2"
