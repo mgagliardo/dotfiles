@@ -28,6 +28,7 @@ brew "iproute2mac"
 brew "openvpn"
 brew "awscli"
 brew "amazon-ecs-cli"
+brew "cfssl"
 
 # Work stuff
 cask "iterm2"
