@@ -29,6 +29,7 @@ brew "openvpn"
 brew "awscli"
 brew "amazon-ecs-cli"
 brew "cfssl"
+brew "tcptraceroute"
 
 # Work stuff
 cask "iterm2"
