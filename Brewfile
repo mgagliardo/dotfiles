@@ -30,7 +30,7 @@ brew "awscli"
 brew "amazon-ecs-cli"
 brew "cfssl"
 brew "tcptraceroute"
-brew "certbot"
+brew "letsencrypt"
 
 # Work stuff
 cask "iterm2"
