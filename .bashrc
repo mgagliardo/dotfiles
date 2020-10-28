@@ -6,7 +6,6 @@ export LC_ALL=en_US.UTF-8
 alias ll='ls -laF'
 alias upgrade_all='brew update && brew upgrade && brew cu --yes --all --cleanup'
 alias whatsmyip='curl -s http://whatismyip.akamai.com/'
-alias python=/usr/local/bin/python2.7
 
 # Gopath
 export GOPATH="$HOME/.go"
@@ -14,23 +13,12 @@ export GOPATH="$HOME/.go"
 # Groovy
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
-# $PATH
-PATH="/usr/local/bin:$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin:$GOPATH/pkg"
+# Python3
+alias python=$HOME/.miniconda3/bin/python3
+export CONDA_HOME=$HOME/.miniconda3
 
-# Python 3
-VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
-source /usr/local/bin/virtualenvwrapper.sh
-export WORKON_HOME=$HOME/.virtualenvs
-
-# GPG
-eval $(gpg-agent --daemon)
-export GPG_TTY=$(tty)
-export KEYID=0x9547959C227B2326
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-    . "${HOME}/.gpg-agent-info"
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
-fi
+# PATH
+export PATH="$PATH:/usr/local/bin:/usr/local/opt/go/libexec/bin:$GOPATH/bin:$GOPATH/pkg:$CONDA_HOME/bin"
 
 # Cool stuff for bash
 # Enable the git bash completion commands
@@ -57,3 +45,20 @@ UNDERLINE=$(tput smul)
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\n${MAGENTA}[\w${GREEN}$(__git_ps1)${MAGENTA}]\n${CYAN}\u$ '
+
+# CONDA
+__conda_setup="$('/Users/miguelgagliardo/.miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/miguelgagliardo/.miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/miguelgagliardo/.miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/miguelgagliardo/.miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
