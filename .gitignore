@@ -1,0 +1,9 @@
+**/blob-store
+**/compile-cache
+**/dev
+**/storage
+**/.npm
+**/.apm
+**/packages/
+profile.json
+com.googlecode.iterm2.plist
