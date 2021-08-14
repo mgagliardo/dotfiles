@@ -42,7 +42,7 @@ cask "visual-studio-code"
 cask "docker"
 cask "virtualbox"
 cask "vagrant"
-cask "minikube"
+brew "minikube"
 
 # Random
 cask "vlc"

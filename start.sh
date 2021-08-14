@@ -1,25 +1,29 @@
 #!/bin/sh
 
-set -exuo pipefail
+set -euo pipefail
 
 # Vars
 NVM_VER=0.36.0
-VAGRANT_IMAGES=('ubuntu/xenial64' 'ubuntu/bionic64' 'centos/7')
 VAGRANT_PLUGINS=('vagrant-reload' 'vagrant-cachier' 'vagrant-vbguest')
+VAGRANT_IMAGES=('ubuntu/xenial64' 'ubuntu/bionic64' 'centos/7' 'centos/8')
 DOCKER_IMAGES=('alpine:3' 'ubuntu:xenial' 'ubuntu:bionic'  'nginx:stable-alpine' 'amazonlinux:latest' 'centos:7')
 
 # Command Line Tools
 xcode-select --install
 
 # Brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+sudo mkdir -p /usr/local/Homebrew
+sudo chown -R $(whoami) /usr/local/Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Necessary packages
 brew update
 brew upgrade
-brew tap caskroom/cask
-brew tap homebrew/completions
+brew tap homebrew/cask
 brew bundle
+
+# Local
+mkdir -p ${HOME}/.local/bin
 
 # Golang GOPATH
 mkdir -p ${HOME}/.go/{src,pkg,bin}
