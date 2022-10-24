@@ -5,10 +5,10 @@ set -euo pipefail
 # Vars
 NVM_VER=0.36.0
 VAGRANT_PLUGINS=('vagrant-reload' 'vagrant-cachier' 'vagrant-vbguest')
-VAGRANT_IMAGES=('ubuntu/xenial64' 'ubuntu/bionic64' 'centos/7' 'centos/8')
-DOCKER_IMAGES=('alpine:3' 'ubuntu:xenial' 'ubuntu:bionic'  'nginx:stable-alpine' 'amazonlinux:latest' 'centos:7')
+VAGRANT_IMAGES=('ubuntu/jammy64' 'generic/oracle8')
+DOCKER_IMAGES=('alpine:3.14' 'ubuntu:22.04' 'amazonlinux:2' 'oraclelinux:9-slim')
 
-# Command Line Tools
+# Command Line Tool
 xcode-select --install
 
 # Brew
@@ -51,8 +51,7 @@ nvm install --lts
 nvm use --lts
 
 # Python
-mkdir ${HOME}/.miniconda3
-curl -o- https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh | bash
+curl -sSL https://install.python-poetry.org | python3 -
 
 # Override .bashrc
 cp .bashrc ${HOME}/.bash_profile
