@@ -1,14 +1,9 @@
-cask_args appdir: "/Applications"
+# Essentials
 
-# Cask upgrade app
-tap "buo/cask-upgrade"
-tap "homebrew/cask-versions"
-
-# System
-brew "python@3.10"
-brew "temurin"
+cask "iterm2"
+brew "neovim"
+cask "librewolf"
 brew "git"
-brew "hub"
 brew "bash-completion"
 brew "bash-git-prompt"
 brew "p7zip"
@@ -27,23 +22,41 @@ brew "awscli"
 brew "tcptraceroute"
 brew "telnet"
 brew "temurin"
+cask "displaylink"
+cask "vivaldi"
 
 # Work
+
 cask "iterm2"
-cask "firefox"
-cask "google-chrome"
 brew "terraform"
 brew "terraform-docs"
-brew "vault"
-cask "visual-studio-code"
+brew "pandoc"
+brew "weasyprint"
+
 
 # Docker/VMs
-cask "docker"
-cask "virtualbox"
-cask "vagrant"
+
+cask "podman-desktop"
 brew "minikube"
+brew "qemu"
+cask "vagrant"
 
 # Random
+
 cask "vlc"
-cask "skype"
 cask "keepassxc"
+cask "chromium"
+cask "font-hack-nerd-font"
+cask "libreoffice"
+cask "rustdesk"
+cask "utm"
+cask "container"
+cask "ghostty"
+cask "librewolf"
+cask "steam"
+cask "deluge"
+cask "iterm2"
+cask "ollama-app"
+cask "ivpn"
+cask "rar"
+

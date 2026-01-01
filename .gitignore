@@ -1,8 +1,1 @@
-**/blob-store
-**/compile-cache
-**/dev
-**/storage
-**/.npm
-**/.apm
-**/packages/
-profile.json
+**/.DS_Store
