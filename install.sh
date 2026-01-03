@@ -14,6 +14,8 @@ chsh -s /bin/bash
 
 # Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+cp ./.bash_profile ${HOME}/.bash_profile
+source ${HOME}/.bash_profile
 
 # Brewww
 brew update
@@ -33,6 +35,12 @@ for vagrant_image in ${VAGRANT_IMAGES[@]}; do
 done
 
 # Override .bash_profile
-cp ./.bash_profile ${HOME}/.bash_profile
-cp ./.vimrc ${HOME}/.vimrc
 cp -R ./.config ${HOME}/
+
+# NeoVim configs
+BREW_DIR=/opt/homebrew/bin
+HEREROCKS_DIR=${HOME}/.local/share/nvim/lazy-rocks/hererocks/bin
+mkdir -p ${HEREROCKS_DIR}
+ln -s ${BREW_DIR}/lua ${HEREROCKS_DIR}/lua
+ln -s ${BREW_DIR}/luarocks ${HEREROCKS_DIR}/luarocks
+
