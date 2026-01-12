@@ -1,18 +1,7 @@
--- Global vim config
-vim.cmd("set nocompatible")
-vim.cmd("filetype plugin on")
-vim.cmd("set secure")
-vim.cmd("set paste")
-vim.cmd("set number")
-vim.cmd("set cursorline")
-vim.cmd("syntax on")
-vim.cmd("set tabstop=2")
-vim.cmd("set shiftwidth=4")
-vim.cmd("set expandtab")
+-- Standard cfg
+require("vimcfg")
 
 -- Lazy.nvim
-
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -28,15 +17,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
-
--- Setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true
 
 -- Lazy.nvim
 require("lazy").setup({
@@ -71,26 +51,4 @@ require("lazy").setup({
   },
 
 })
-
-require("nvim-tree").setup({
-  sort = {
-    sorter = "case_sensitive",
-  },
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-})
-require("nvim-web-devicons").setup()
-
--- Enable tokyonight
-vim.cmd[[colorscheme tokyonight-night]]
-
--- Pyright
-vim.lsp.enable('pyright')
 

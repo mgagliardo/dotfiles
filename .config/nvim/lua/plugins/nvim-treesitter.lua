@@ -23,9 +23,13 @@ return {
         "toml",
         "go",
         "regex",
+        "terraform",
+        "helm",
       },
 
       sync_install = false,
+
+      indent = { enable = true },
 
       highlight = {
         enable = true,
@@ -38,8 +42,6 @@ return {
         -- additional_vim_regex_highlighting = false,
         additional_vim_regex_highlighting = false,
       },
-      -- enable indentation
-      indent = { enable = true },
     })
   end,
 }
