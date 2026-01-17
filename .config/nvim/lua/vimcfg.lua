@@ -24,15 +24,9 @@ vim.g.maplocalleader = "\\"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- Ensure newline at the end of all files
-vim.api.nvim_create_autocmd({"BufWritePre"}, {
-  group = vim.api.nvim_create_augroup('UserOnSave', {}),
-  pattern = '*',
-  callback = function()
-    local n_lines = vim.api.nvim_buf_line_count(0)
-    local last_nonblank = vim.fn.prevnonblank(n_lines)
-    if last_nonblank <= n_lines then vim.api.nvim_buf_set_lines(0,
-      last_nonblank, n_lines, true, { '' })
-    end
-  end,
-})
+vim.keymap.set("n", "<c-k>", " :wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", " :wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", " :wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", " :wincmd l<CR>")
+
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")

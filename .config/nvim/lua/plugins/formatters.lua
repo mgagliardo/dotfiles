@@ -8,7 +8,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				go = { "goimports", "gofmt" },
-				python = { "ruff_fix", "ruff_format", "ty" },
+				python = { "ruff_fix", "ruff_format" },
 				terraform = { "tofu_fmt" },
 			},
 			format_on_save = {
@@ -31,4 +31,3 @@ return {
 		vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
 	end,
 }
-

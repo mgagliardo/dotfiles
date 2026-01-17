@@ -1,48 +1,60 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  version = "v0.10.0",
-  lazy = false,
-  build = ":TSUpdate",
-  event = { "BufReadPre", "BufNewFile" },
-  config = function()
-    local treesitter = require("nvim-treesitter.configs")
-    -- configure treesitter
-    treesitter.setup({ -- enable syntax highlighting
+	{
+		"nvim-treesitter/nvim-treesitter",
+		version = "v0.10.0",
+		lazy = false,
+		build = ":TSUpdate",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			local treesitter = require("nvim-treesitter.configs")
+			-- configure treesitter
+			treesitter.setup({ -- enable syntax highlighting
 
-      ensure_installed = {
-        "python",
-        "yaml",
-        "json",
-        "dockerfile",
-        "nginx",
-        "bash",
-        "markdown",
-        "markdown_inline",
-        "lua",
-        "gitignore",
-        "toml",
-        "go",
-        "regex",
-        "terraform",
-        "helm",
-      },
+				ensure_installed = {
+					"python",
+					"yaml",
+					"json",
+					"dockerfile",
+					"nginx",
+					"bash",
+					"markdown",
+					"markdown_inline",
+					"lua",
+					"gitignore",
+					"toml",
+					"go",
+					"regex",
+					"terraform",
+					"helm",
+				},
 
-      sync_install = false,
+				sync_install = false,
 
-      indent = { enable = true },
+				indent = { enable = true },
 
-      highlight = {
-        enable = true,
-        -- List of languages that will be disabled
-        disable = { "" },
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-        -- additional_vim_regex_highlighting = false,
-        additional_vim_regex_highlighting = false,
-      },
-    })
-  end,
+				highlight = {
+					enable = true,
+					-- List of languages that will be disabled
+					disable = { "" },
+					-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+					-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+					-- Using this option may slow down your editor, and you may see some duplicate highlights.
+					-- Instead of true it can also be a list of languages
+					-- additional_vim_regex_highlighting = false,
+					additional_vim_regex_highlighting = false,
+				},
+
+				textobjects = {
+					select = {
+						enable = true,
+						lookahead = true,
+					},
+				},
+			})
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "main",
+	},
 }
-
