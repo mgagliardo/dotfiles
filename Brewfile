@@ -1,10 +1,10 @@
 # Essentials
-
 cask "iterm2"
 brew "neovim"
 brew "tree-sitter-cli"
 brew "lua"
 brew "luarocks"
+brew "tmux"
 cask "librewolf"
 brew "git"
 brew "bash-completion"
@@ -33,16 +33,13 @@ cask "chromium"
 cask "ivpn"
 
 # Work
-
 brew "terraform"
 brew "terraform-docs"
 brew "pandoc"
 brew "weasyprint"
 cask "rustdesk"
 
-
 # Docker/VMs
-
 cask "container"
 cask "podman-desktop"
 brew "minikube"
@@ -52,7 +49,6 @@ cask "utm"
 cask "ollama-app"
 
 # Random
-
 cask "vlc"
 cask "libreoffice"
 cask "steam"
