@@ -1,7 +1,6 @@
 return {
 	{
 		"mason-org/mason.nvim",
-		version = "v2.2.1",
 		lazy = false,
 		config = function()
 			require("mason").setup()
@@ -9,7 +8,6 @@ return {
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
-		version = "v2.1.0",
 		lazy = false,
 		config = function()
 			require("mason-lspconfig").setup({
@@ -20,28 +18,27 @@ return {
 					"tofu_ls",
 					"stylua",
 					"basedpyright",
+					"pyrefly",
 				},
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
-		version = "v2.5.0",
 		lazy = false,
 
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local lspconfig = require("lspconfig")
 			-- LSP Servers
-			lspconfig.lua_ls.setup({
+			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 			})
-			lspconfig.gopls.setup({
+			vim.lsp.config("gopls", {
 				capabilities = capabilities,
 			})
 			-- Pyright + Ruff
-			lspconfig.basedpyright.setup({
+			vim.lsp.config("basedpyright", {
 				capabilities = capabilities,
 				settings = {
 					basedpyright = {
@@ -57,7 +54,7 @@ return {
 					},
 				},
 			})
-			lspconfig.ruff.setup({
+			vim.lsp.config("ruff", {
 				capabilities = capabilities,
 				init_options = {
 					settings = {
@@ -65,7 +62,7 @@ return {
 					},
 				},
 			})
-			lspconfig.pyrefly.setup({
+			vim.lsp.config("pyrefly", {
 				capabilities = capabilities,
 			})
 

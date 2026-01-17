@@ -1,14 +1,13 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		version = "v0.10.0",
 		lazy = false,
 		build = ":TSUpdate",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
-			local treesitter = require("nvim-treesitter.configs")
-			-- configure treesitter
-			treesitter.setup({ -- enable syntax highlighting
+			local treesitter = require("nvim-treesitter")
+
+			treesitter.install({
 
 				ensure_installed = {
 					"python",

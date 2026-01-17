@@ -1,6 +1,5 @@
 return {
 	"stevearc/conform.nvim",
-	version = "v9.1.0",
 	config = function()
 		local cnf = require("conform")
 
