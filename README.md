@@ -8,4 +8,4 @@ $ cd dotfiles
 $ ./start.sh
 ```
 
-### Most of the stuff is explicited on `Brewfile`, and some other on the `start.sh` script.
+### Most of the stuff is explicited on `Brewfile`, and some other on the `install.sh` script.

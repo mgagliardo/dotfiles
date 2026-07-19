@@ -17,7 +17,6 @@ return {
 					"ruff",
 					"tofu_ls",
 					"stylua",
-					"basedpyright",
 					"pyrefly",
 				},
 			})
@@ -37,23 +36,7 @@ return {
 			vim.lsp.config("gopls", {
 				capabilities = capabilities,
 			})
-			-- Pyright + Ruff
-			vim.lsp.config("basedpyright", {
-				capabilities = capabilities,
-				settings = {
-					basedpyright = {
-						-- Using Ruff's import organizer
-						disableOrganizeImports = true,
-					},
-					python = {
-						analysis = {
-							-- Ignore all files for analysis to exclusively use Ruff for linting
-							typeCheckingMode = "basic",
-							ignore = { "*" },
-						},
-					},
-				},
-			})
+			-- Pyrefly + Ruff
 			vim.lsp.config("ruff", {
 				capabilities = capabilities,
 				init_options = {
@@ -63,6 +46,9 @@ return {
 				},
 			})
 			vim.lsp.config("pyrefly", {
+				capabilities = capabilities,
+			})
+			vim.lsp.config("tofu_ls", {
 				capabilities = capabilities,
 			})
 
