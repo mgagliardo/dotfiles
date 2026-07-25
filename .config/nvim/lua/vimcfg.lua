@@ -1,7 +1,7 @@
 -- Global vim config
 vim.opt.filetype = "plugin"
 vim.opt.secure = true
-vim.opt.paste = true
+vim.opt.paste = false
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.syntax = "on"
@@ -30,5 +30,9 @@ vim.keymap.set("n", "<c-k>", " :wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", " :wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", " :wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", " :wincmd l<CR>")
-
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+
+-- Set paste if needed
+vim.keymap.set("n", "<leader>p", function()
+	vim.opt.paste = not vim.opt.paste:get()
+end)

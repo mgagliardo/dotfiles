@@ -51,12 +51,25 @@ return {
 			vim.lsp.config("tofu_ls", {
 				capabilities = capabilities,
 			})
+			vim.diagnostic.config({
+				virtual_text = true, -- show errors inline at the end of the line
+				signs = true, -- show icons in the gutter
+				underline = true,
+				update_in_insert = false,
+				severity_sort = true,
+			})
 
 			-- Key Bindings
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "K", function()
+				vim.lsp.buf.hover({ border = "rounded", max_height = 25, max_width = 125, desc = "Hover Documentation" })
+			end, { silent = true })
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			-- Diagnostics
+			vim.keymap.set("n", "<leader>er", vim.diagnostic.open_float, {})
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {})
 		end,
 	},
 }
