@@ -5,9 +5,7 @@ return {
 		build = ":TSUpdate",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
-			local treesitter = require("nvim-treesitter")
-
-			treesitter.install({
+			require("nvim-treesitter").setup({
 
 				ensure_installed = {
 					"python",
@@ -26,23 +24,7 @@ return {
 					"terraform",
 					"helm",
 				},
-
 				sync_install = false,
-
-				indent = { enable = true },
-
-				highlight = {
-					enable = true,
-					-- List of languages that will be disabled
-					disable = { "" },
-					-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-					-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-					-- Using this option may slow down your editor, and you may see some duplicate highlights.
-					-- Instead of true it can also be a list of languages
-					-- additional_vim_regex_highlighting = false,
-					additional_vim_regex_highlighting = false,
-				},
-
 				textobjects = {
 					select = {
 						enable = true,
@@ -50,10 +32,55 @@ return {
 					},
 				},
 			})
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function(args)
+					local ft = vim.bo[args.buf].filetype
+
+					if ft == "" or vim.bo[args.buf].buftype ~= "" then
+						return
+					end
+
+					local lang = vim.treesitter.language.get_lang(ft)
+					if lang then
+						pcall(vim.treesitter.start, args.buf, lang)
+					end
+				end,
+			})
 		end,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		branch = "main",
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		event = "VeryLazy",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
+		opts = {},
+		config = function()
+			local hooks = require("ibl.hooks")
+			-- create the highlight groups in the highlight setup hook, so they are reset
+			-- every time the colorscheme changes
+
+			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+				vim.api.nvim_set_hl(0, "IndentGuide", {
+					fg = "#3B4261", -- subtle Tokyo Night gray
+				})
+			end)
+			require("ibl").setup({
+				indent = {
+					char = "▏",
+					highlight = "IndentGuide",
+				},
+				scope = {
+					enabled = true,
+					show_start = true,
+					show_end = true,
+				},
+			})
+		end,
 	},
 }
