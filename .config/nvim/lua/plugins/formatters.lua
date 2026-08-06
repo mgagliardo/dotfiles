@@ -21,6 +21,11 @@ return {
 			notify_no_formatters = true,
 			log_level = vim.log.levels.ERROR,
 		})
-		vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
+		vim.keymap.set({ "n", "v" }, "<leader>ff", function()
+			require("conform").format({
+				async = true,
+				lsp_format = "fallback",
+			})
+		end, { desc = "Format Buffer" })
 	end,
 }

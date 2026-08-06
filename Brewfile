@@ -1,5 +1,6 @@
 # Essentials
 cask "ghostty"
+brew "wget"
 brew "neovim"
 brew "tree-sitter-cli"
 brew "lua"
@@ -44,9 +45,8 @@ brew "weasyprint"
 cask "rustdesk"
 
 # Docker/VMs
-cask "container"
-cask "podman"
-cask "podman-compose"
+brew "podman"
+brew "podman-compose"
 brew "minikube"
 brew "kubernetes-cli"
 brew "qemu"
@@ -62,4 +62,3 @@ cask "steam"
 cask "deluge"
 cask "dosbox-x"
 cask "moonlight"
-
